@@ -1,0 +1,30 @@
+{
+  "name": "@qwen-claude/providers",
+  "version": "0.1.0",
+  "description": "Model providers for Qwen Claude CLI",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@qwen-claude/core": "*",
+    "axios": "^1.7.7",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^3.2.4",
+    "@types/node": "^22.0.0"
+  }
+}

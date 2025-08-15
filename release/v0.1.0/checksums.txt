@@ -1,0 +1,2 @@
+29061b051dff9f946340fe5bf8acbadbaafeb36d53416cf4892bb6ed1a218498  qwen-claude-linux
+faf200ca787244b83489296a748eaa5255b74f1b8ad332e2eabfef6b2d99186b  qwen-claude-windows.exe

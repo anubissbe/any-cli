@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "composite": true,
+    "incremental": true,
+    "declaration": true,
+    "declarationMap": true,
+    "lib": ["ES2023"],
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "target": "ES2022",
+    "types": ["node", "vitest/globals"],
+    "outDir": "./dist",
+    "rootDir": "./",
+    "baseUrl": "./",
+    "paths": {
+      "@qwen-claude/core": ["./packages/core/src"],
+      "@qwen-claude/cli": ["./packages/cli/src"],
+      "@qwen-claude/providers": ["./packages/providers/src"],
+      "@qwen-claude/tools": ["./packages/tools/src"],
+      "@qwen-claude/utils": ["./packages/utils/src"]
+    }
+  },
+  "include": ["packages/**/*", "scripts/**/*"],
+  "exclude": ["node_modules", "dist", "bundle", "**/*.test.ts", "**/*.test.tsx"]
+}

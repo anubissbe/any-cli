@@ -1,0 +1,33 @@
+{
+  "name": "@qwen-claude/tools",
+  "version": "0.1.0",
+  "description": "Tool execution framework for Qwen Claude CLI",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@qwen-claude/core": "*",
+    "@qwen-claude/utils": "*",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^3.2.4",
+    "@types/node": "^22.0.0",
+    "@types/fs-extra": "^11.0.4"
+  }
+}

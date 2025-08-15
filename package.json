@@ -1,0 +1,101 @@
+{
+  "name": "@qwen-claude/qwen-claude-cli",
+  "version": "0.1.0",
+  "description": "Advanced TypeScript CLI tool with Qwen3-Coder 30B and OpenRouter integration",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/qwen-claude-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "typescript",
+    "qwen",
+    "claude",
+    "openrouter",
+    "code-assistant",
+    "ai"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "scripts": {
+    "start": "node scripts/start.js",
+    "dev": "node scripts/start.js --dev",
+    "debug": "cross-env DEBUG=1 node --inspect-brk scripts/start.js",
+    "generate": "node scripts/generate-git-commit-info.js",
+    "build": "node scripts/build.js",
+    "build:all": "npm run build && npm run build:packages",
+    "build:packages": "npm run build --workspaces",
+    "bundle": "npm run generate && node esbuild.config.js && node scripts/copy_bundle_assets.js",
+    "test": "npm run test --workspaces --if-present",
+    "test:ci": "npm run test:ci --workspaces --if-present && npm run test:scripts",
+    "test:scripts": "vitest run --config ./scripts/tests/vitest.config.ts",
+    "test:integration": "npm run test:integration --workspaces --if-present",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --fix",
+    "lint:ci": "eslint . --ext .ts,.tsx --max-warnings 0",
+    "format": "prettier --write .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "preflight": "npm run clean && npm ci && npm run format && npm run lint:ci && npm run build && npm run typecheck && npm run test:ci",
+    "prepare": "npm run bundle",
+    "clean": "node scripts/clean.js",
+    "install:global": "npm run bundle && npm link",
+    "build:binaries": "node scripts/build-binaries.js",
+    "build:dist": "npm run bundle && npm run build:binaries",
+    "package:release": "node scripts/package-release.js",
+    "release": "npm run build:dist && npm run package:release"
+  },
+  "bin": {
+    "qwen-claude": "bundle/qwen-claude.cjs",
+    "qcli": "bundle/qwen-claude.cjs"
+  },
+  "files": [
+    "bundle/",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/marked": "^5.0.2",
+    "@types/micromatch": "^4.0.9",
+    "@types/mime-types": "^3.0.1",
+    "@types/minimatch": "^5.1.2",
+    "@types/shell-quote": "^1.7.5",
+    "@types/uuid": "^10.0.0",
+    "@types/yargs": "^17.0.32",
+    "@vitest/coverage-v8": "^3.1.1",
+    "concurrently": "^9.2.0",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-license-header": "^0.8.0",
+    "glob": "^10.4.5",
+    "globals": "^16.0.0",
+    "json": "^11.0.0",
+    "lodash": "^4.17.21",
+    "prettier": "^3.5.3",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.30.1",
+    "vitest": "^3.2.4",
+    "yargs": "^17.7.2"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "inquirer": "^12.0.0",
+    "marked": "^5.1.1",
+    "node-fetch": "^3.3.2",
+    "ora": "^8.1.0",
+    "yaml": "^2.5.1"
+  }
+}
