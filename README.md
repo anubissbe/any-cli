@@ -166,15 +166,15 @@ python plato_interactive.py
 **💬 Natural Language Interface**
 ```
 You: Show me the project structure
-🤖 CLAUDE: I'll analyze your project structure...
+🤖 Plato: I'll analyze your project structure...
 [Rich file tree with syntax highlighting displayed]
 
 You: Find all TODO comments in the codebase
-🤖 CLAUDE: Searching for TODO comments...
+🤖 Plato: Searching for TODO comments...
 [Results with file locations and context]
 
 You: Help me refactor the authentication module
-🤖 CLAUDE: I'll analyze the auth module and suggest improvements...
+🤖 Plato: I'll analyze the auth module and suggest improvements...
 [Code analysis and refactoring suggestions]
 ```
 
@@ -220,12 +220,12 @@ Project Detected: Python Package
 - Git Branch: main (clean)
 
 You: Show me the main CLI module
-🤖 CLAUDE: I'll read the main CLI module for you...
+🤖 Plato: I'll read the main CLI module for you...
 
 [File content with syntax highlighting displayed]
 
 You: Add better error handling to the health check function
-🤖 CLAUDE: I'll analyze the health check function and suggest improvements...
+🤖 Plato: I'll analyze the health check function and suggest improvements...
 
 [Analysis and code suggestions]
 

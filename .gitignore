@@ -1,0 +1,130 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.manifest
+*.spec
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+.ENV/
+
+# PyInstaller
+*.manifest
+*.spec
+build/
+dist/
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.hypothesis/
+test_results*.xml
+*.cover
+coverage.xml
+*,cover
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment files
+.env
+.env.local
+.env.*.local
+*.env
+
+# Logs
+*.log
+logs/
+*.err
+*.out
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache and temporary files
+.cache/
+temp/
+tmp/
+*.tmp
+*.bak
+*.backup
+
+# Test files and demos
+test_*.py
+demo_*.py
+*_test.py
+*_demo.py
+test_files/
+test_functionality_report.json
+
+# Documentation drafts and reports
+*_REPORT.md
+*_STATUS.md
+*_SUMMARY.md
+*_AUDIT.md
+*_GUIDE.md
+*_IMPLEMENTATION.md
+FIXES_*.md
+QUICK_*.md
+FIX_*.md
+
+# Backup files
+*.backup
+*.DANGEROUS_MOCK_BACKUP
+
+# Binary and compiled files
+plato
+plato-cli
+*.pyc
+*.pyo
+*.pyd
+
+# Config files (keep examples)
+config.yaml
+
+# Server logs
+plato_server.log
+
+# Temporary test files
+file*.txt
+hello*.py
+fibonacci*.py
+simple_*.py
+
+# MCP test files
+test_mcp*.py
+test_serena*.py
+test_proper_mcp*.py
+
+# Installation scripts (keep for users)
+# install.sh
+# uninstall.sh
+# build.sh
+# start_plato.sh
