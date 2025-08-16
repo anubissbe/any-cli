@@ -1,0 +1,317 @@
+# Test Configuration for Plato Test Suite
+
+# Default test configuration
+default:
+  # AI Provider configurations for testing (use fake keys for safety)
+  ai_providers:
+    anthropic:
+      api_key: "test-anthropic-key-${ANTHROPIC_API_KEY:-fake}"
+      enabled: false  # Disabled by default to avoid real API calls
+    
+    openai:
+      api_key: "test-openai-key-${OPENAI_API_KEY:-fake}"
+      enabled: false  # Disabled by default to avoid real API calls
+    
+    gemini:
+      api_key: "test-gemini-key-${GEMINI_API_KEY:-fake}"
+      enabled: false
+    
+    qwen_local:
+      base_url: "http://localhost:8000"
+      enabled: false  # Usually not available in CI
+    
+    openrouter:
+      api_key: "test-openrouter-key-${OPENROUTER_API_KEY:-fake}"
+      enabled: false
+  
+  # MCP Server configurations
+  mcp_servers:
+    serena:
+      url: "http://localhost:8765"
+      timeout: 10
+      enabled: true
+      description: "Serena LSP-based MCP server"
+    
+    office_word:
+      enabled: false  # Not needed for most tests
+      description: "Document manipulation server"
+    
+    archy:
+      enabled: false  # Not needed for most tests
+      description: "Architecture diagram generation"
+  
+  # Test-specific context settings
+  context:
+    max_tokens: 1000      # Small for faster tests
+    preserve_tokens: 200
+    compression_ratio: 0.5
+    min_entries: 5
+  
+  # Server settings for testing
+  server:
+    host: "localhost"
+    port: 8080
+    timeout: 30
+  
+  # Test timeouts
+  timeouts:
+    unit_test: 30
+    integration_test: 60
+    e2e_test: 300
+    api_request: 10
+
+# CI/CD environment configuration
+ci:
+  # Inherit from default but override specific settings
+  <<: *default
+  
+  # Disable all real AI providers in CI
+  ai_providers:
+    anthropic:
+      enabled: false
+    openai:
+      enabled: false
+    gemini:
+      enabled: false
+    qwen_local:
+      enabled: false
+    openrouter:
+      enabled: false
+  
+  # MCP servers in CI (Serena should be started separately)
+  mcp_servers:
+    serena:
+      url: "http://localhost:8765"
+      timeout: 5
+      enabled: true
+      required: false  # Don't fail tests if not available
+  
+  # Shorter timeouts for CI
+  timeouts:
+    unit_test: 20
+    integration_test: 30
+    e2e_test: 120
+    api_request: 5
+  
+  # CI-specific test markers
+  test_markers:
+    skip_slow: true
+    skip_external_deps: true
+    mock_ai_providers: true
+
+# Local development environment
+local:
+  <<: *default
+  
+  # Local development may have real API keys
+  ai_providers:
+    anthropic:
+      api_key: "${ANTHROPIC_API_KEY}"
+      enabled: "${ANTHROPIC_API_KEY:+true}"  # Enable if key is set
+    
+    openai:
+      api_key: "${OPENAI_API_KEY}"
+      enabled: "${OPENAI_API_KEY:+true}"
+    
+    gemini:
+      api_key: "${GEMINI_API_KEY}"
+      enabled: "${GEMINI_API_KEY:+true}"
+    
+    qwen_local:
+      base_url: "http://localhost:8000"
+      enabled: true  # Assume local Qwen might be running
+    
+    openrouter:
+      api_key: "${OPENROUTER_API_KEY}"
+      enabled: "${OPENROUTER_API_KEY:+true}"
+  
+  # Local MCP servers
+  mcp_servers:
+    serena:
+      url: "http://localhost:8765"
+      timeout: 30
+      enabled: true
+      required: false
+    
+    office_word:
+      enabled: true
+      description: "Local Office Word MCP server"
+    
+    archy:
+      enabled: true
+      description: "Local Archy MCP server"
+  
+  # Longer timeouts for local debugging
+  timeouts:
+    unit_test: 60
+    integration_test: 120
+    e2e_test: 600
+    api_request: 30
+  
+  # Local development test markers
+  test_markers:
+    skip_slow: false
+    skip_external_deps: false
+    mock_ai_providers: false
+    enable_real_api_tests: true
+
+# Performance testing environment
+performance:
+  <<: *default
+  
+  # Performance tests may use multiple providers
+  ai_providers:
+    anthropic:
+      enabled: true
+    openai:
+      enabled: true
+    gemini:
+      enabled: true
+  
+  # Larger context for performance testing
+  context:
+    max_tokens: 32000
+    preserve_tokens: 4000
+    compression_ratio: 0.3
+    min_entries: 50
+  
+  # Performance-specific timeouts
+  timeouts:
+    unit_test: 30
+    integration_test: 120
+    e2e_test: 1800  # 30 minutes for performance tests
+    api_request: 60
+  
+  test_markers:
+    include_performance: true
+    large_context_tests: true
+    stress_tests: true
+
+# Mock environment (no external dependencies)
+mock:
+  <<: *default
+  
+  # All AI providers disabled
+  ai_providers:
+    anthropic:
+      enabled: false
+    openai:
+      enabled: false
+    gemini:
+      enabled: false
+    qwen_local:
+      enabled: false
+    openrouter:
+      enabled: false
+  
+  # Mock MCP servers
+  mcp_servers:
+    serena:
+      enabled: false
+      mock: true
+    office_word:
+      enabled: false
+      mock: true
+    archy:
+      enabled: false
+      mock: true
+  
+  # Fast timeouts for mock tests
+  timeouts:
+    unit_test: 10
+    integration_test: 20
+    e2e_test: 60
+    api_request: 2
+  
+  test_markers:
+    mock_all_external: true
+    skip_real_connections: true
+    fast_tests_only: true
+
+# Test data configurations
+test_data:
+  sample_projects:
+    python_simple:
+      files:
+        - "main.py"
+        - "utils.py"
+        - "requirements.txt"
+      language: "python"
+      size: "small"
+    
+    typescript_basic:
+      files:
+        - "index.ts"
+        - "package.json"
+        - "types.ts"
+      language: "typescript"
+      size: "small"
+    
+    multi_language:
+      files:
+        - "main.py"
+        - "app.ts"
+        - "script.js"
+        - "README.md"
+      language: "mixed"
+      size: "medium"
+  
+  sample_code:
+    python_functions:
+      - "fibonacci"
+      - "factorial"
+      - "calculator_class"
+    
+    typescript_interfaces:
+      - "user_interface"
+      - "manager_class"
+      - "utility_functions"
+  
+  test_scenarios:
+    code_analysis:
+      - "analyze_python_functions"
+      - "analyze_typescript_classes"
+      - "find_code_issues"
+      - "suggest_improvements"
+    
+    refactoring:
+      - "extract_functions"
+      - "improve_performance"
+      - "add_type_hints"
+      - "fix_code_smells"
+    
+    tool_integration:
+      - "serena_file_operations"
+      - "serena_symbol_search"
+      - "serena_diagnostics"
+      - "mcp_tool_discovery"
+
+# Pytest configuration
+pytest:
+  markers:
+    unit: "marks tests as unit tests (fast, no external dependencies)"
+    integration: "marks tests as integration tests (may use external services)"
+    slow: "marks tests as slow (use -m 'not slow' to skip)"
+    e2e: "marks tests as end-to-end tests"
+    mock: "marks tests that use mocked dependencies"
+    real_api: "marks tests that use real API calls (requires API keys)"
+    serena_required: "marks tests that require Serena MCP server"
+    server_required: "marks tests that require Plato server"
+  
+  addopts:
+    - "--strict-markers"
+    - "--tb=short"
+    - "--disable-warnings"
+    - "-v"
+  
+  testpaths:
+    - "tests"
+  
+  python_files:
+    - "test_*.py"
+  
+  python_classes:
+    - "Test*"
+  
+  python_functions:
+    - "test_*"

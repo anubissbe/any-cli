@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Plato CLI launcher script
+
+# Get the directory where this script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Activate virtual environment if it exists
+if [ -d "$SCRIPT_DIR/venv" ]; then
+    source "$SCRIPT_DIR/venv/bin/activate"
+fi
+
+# Run the Plato CLI
+exec python -m plato.cli "$@"

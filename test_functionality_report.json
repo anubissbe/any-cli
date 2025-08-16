@@ -1,0 +1,435 @@
+{
+  "timestamp": "2025-08-16T15:32:56.343591",
+  "plato_available": true,
+  "total_tests": 39,
+  "passed_tests": 34,
+  "failed_tests": 5,
+  "success_rate": 87.17948717948718,
+  "total_duration": 2.6294448375701904,
+  "categories": {
+    "embedded": {
+      "passed": 4,
+      "total": 6,
+      "success_rate": 66.66666666666666,
+      "tests": [
+        {
+          "name": "embedded_tool_ReadFileTool",
+          "passed": true,
+          "duration": 0.0004074573516845703,
+          "error": null,
+          "details": null
+        },
+        {
+          "name": "embedded_tool_WriteFileTool",
+          "passed": true,
+          "duration": 0.0004582405090332031,
+          "error": null,
+          "details": null
+        },
+        {
+          "name": "embedded_tool_EditFileTool",
+          "passed": true,
+          "duration": 0.00037217140197753906,
+          "error": null,
+          "details": null
+        },
+        {
+          "name": "embedded_tool_ListDirectoryTool",
+          "passed": false,
+          "duration": 0.002858400344848633,
+          "error": "Failed to list directory correctly",
+          "details": null
+        },
+        {
+          "name": "embedded_tool_SearchFilesTool",
+          "passed": true,
+          "duration": 2.521214485168457,
+          "error": null,
+          "details": null
+        },
+        {
+          "name": "embedded_tool_CreateDirectoryTool",
+          "passed": false,
+          "duration": 8.487701416015625e-05,
+          "error": "Parameter validation failed: Required parameter 'directory_path' is missing",
+          "details": null
+        }
+      ]
+    },
+    "lsp": {
+      "passed": 21,
+      "total": 21,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "lsp_GetSymbolsTool_python",
+          "passed": true,
+          "duration": 0.0007677078247070312,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_GetSymbolsTool_javascript",
+          "passed": true,
+          "duration": 0.0004246234893798828,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_GetSymbolsTool_typescript",
+          "passed": true,
+          "duration": 0.0004177093505859375,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_FindReferencesTool_python",
+          "passed": true,
+          "duration": 0.0002853870391845703,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_FindReferencesTool_javascript",
+          "passed": true,
+          "duration": 0.0004909038543701172,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_FindReferencesTool_typescript",
+          "passed": true,
+          "duration": 0.000476837158203125,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_FindDefinitionTool_python",
+          "passed": true,
+          "duration": 0.00025963783264160156,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_FindDefinitionTool_javascript",
+          "passed": true,
+          "duration": 0.0004391670227050781,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_FindDefinitionTool_typescript",
+          "passed": true,
+          "duration": 0.00044846534729003906,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_GetDiagnosticsTool_python",
+          "passed": true,
+          "duration": 0.002216339111328125,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_GetDiagnosticsTool_javascript",
+          "passed": true,
+          "duration": 0.0003781318664550781,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_GetDiagnosticsTool_typescript",
+          "passed": true,
+          "duration": 0.00039076805114746094,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_CodeAnalysisTool_python",
+          "passed": true,
+          "duration": 0.0018529891967773438,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_CodeAnalysisTool_javascript",
+          "passed": true,
+          "duration": 0.0005645751953125,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_CodeAnalysisTool_typescript",
+          "passed": true,
+          "duration": 0.0005338191986083984,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_HoverInfoTool_python",
+          "passed": true,
+          "duration": 0.0002663135528564453,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_HoverInfoTool_javascript",
+          "passed": true,
+          "duration": 0.00048804283142089844,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_HoverInfoTool_typescript",
+          "passed": true,
+          "duration": 0.0005209445953369141,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_CompletionsTool_python",
+          "passed": true,
+          "duration": 0.00040435791015625,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_CompletionsTool_javascript",
+          "passed": true,
+          "duration": 0.000537872314453125,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        },
+        {
+          "name": "lsp_CompletionsTool_typescript",
+          "passed": true,
+          "duration": 0.0005495548248291016,
+          "error": null,
+          "details": {
+            "has_result": true
+          }
+        }
+      ]
+    },
+    "language": {
+      "passed": 6,
+      "total": 6,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "language_support_python",
+          "passed": true,
+          "duration": 0.0008325576782226562,
+          "error": null,
+          "details": {
+            "lsp_support": true
+          }
+        },
+        {
+          "name": "language_support_javascript",
+          "passed": true,
+          "duration": 0.0006842613220214844,
+          "error": null,
+          "details": {
+            "lsp_support": true
+          }
+        },
+        {
+          "name": "language_support_typescript",
+          "passed": true,
+          "duration": 0.0006473064422607422,
+          "error": null,
+          "details": {
+            "lsp_support": true
+          }
+        },
+        {
+          "name": "language_support_go",
+          "passed": true,
+          "duration": 0.0006525516510009766,
+          "error": null,
+          "details": {
+            "lsp_support": true
+          }
+        },
+        {
+          "name": "language_support_rust",
+          "passed": true,
+          "duration": 0.0006988048553466797,
+          "error": null,
+          "details": {
+            "lsp_support": true
+          }
+        },
+        {
+          "name": "language_support_java",
+          "passed": true,
+          "duration": 0.0006291866302490234,
+          "error": null,
+          "details": {
+            "lsp_support": true
+          }
+        }
+      ]
+    },
+    "ai": {
+      "passed": 0,
+      "total": 1,
+      "success_rate": 0.0,
+      "tests": [
+        {
+          "name": "ai_router_init",
+          "passed": false,
+          "duration": 3.981590270996094e-05,
+          "error": null,
+          "details": null
+        }
+      ]
+    },
+    "context": {
+      "passed": 1,
+      "total": 1,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "context_manager_init",
+          "passed": true,
+          "duration": 4.410743713378906e-05,
+          "error": null,
+          "details": null
+        }
+      ]
+    },
+    "mcp": {
+      "passed": 0,
+      "total": 1,
+      "success_rate": 0.0,
+      "tests": [
+        {
+          "name": "mcp_manager_init",
+          "passed": false,
+          "duration": 1.0013580322265625e-05,
+          "error": null,
+          "details": null
+        }
+      ]
+    },
+    "serena": {
+      "passed": 0,
+      "total": 1,
+      "success_rate": 0.0,
+      "tests": [
+        {
+          "name": "serena_mcp_connection",
+          "passed": false,
+          "duration": 0.08707880973815918,
+          "error": null,
+          "details": {
+            "serena_server_available": false
+          }
+        }
+      ]
+    },
+    "agent": {
+      "passed": 1,
+      "total": 1,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "agent_orchestration",
+          "passed": true,
+          "duration": 6.9141387939453125e-06,
+          "error": null,
+          "details": {
+            "ai_router": true,
+            "context_manager": true,
+            "mcp_manager": true,
+            "tool_manager": true,
+            "lsp_manager": true
+          }
+        }
+      ]
+    },
+    "missing": {
+      "passed": 1,
+      "total": 1,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "missing_features_check",
+          "passed": true,
+          "duration": 1.0728836059570312e-05,
+          "error": null,
+          "details": {
+            "available_features": [
+              "mcp_integration",
+              "ai_routing",
+              "file_operations",
+              "lsp_integration",
+              "symbol_navigation",
+              "diagnostics",
+              "context_management"
+            ],
+            "missing_features": [
+              "code_completion: Advanced code completion with AI suggestions",
+              "refactoring_tools: Automated refactoring capabilities",
+              "test_generation: Automatic test case generation",
+              "documentation_gen: Auto-documentation generation",
+              "code_review: AI-powered code review",
+              "pattern_detection: Design pattern detection and suggestions",
+              "performance_analysis: Code performance analysis",
+              "security_scanning: Security vulnerability detection",
+              "dependency_management: Dependency analysis and updates",
+              "project_scaffolding: Project template generation",
+              "git_integration: Advanced Git operations",
+              "database_tools: Database schema and query tools",
+              "api_tools: REST API testing and documentation"
+            ],
+            "coverage_percentage": 53.84615384615385
+          }
+        }
+      ]
+    }
+  }
+}

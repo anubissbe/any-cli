@@ -1,0 +1,78 @@
+INFO:     Started server process [1607923]
+INFO:     Waiting for application startup.
+INFO:plato.server.api:Starting Plato server...
+INFO:plato.server.api:Security configured with 5 allowed origins
+INFO:plato.server.api:API Key required: False
+INFO:plato.server.api:Rate limiting: True
+INFO:plato.server.api:Security headers: True
+INFO:plato.server.api:Skipping dummy OpenAI API key
+INFO:plato.server.api:Gemini API key configured (masked)
+INFO:plato.server.api:OpenRouter API key configured (masked)
+INFO:plato.server.api:Qwen base URL configured: http://192.168.1.28:8000
+INFO:plato.server.api:Loaded 3 AI provider configurations
+INFO:plato.core.mcp_manager:Added MCP server: serena (MCPTransport.SSE)
+INFO:plato.core.mcp_manager:Added MCP server: office-word (MCPTransport.STDIO)
+INFO:plato.core.mcp_manager:Added MCP server: archy (MCPTransport.STDIO)
+ERROR:plato.core.mcp_manager:Failed to connect to SSE MCP server serena: All connection attempts failed
+ERROR:plato.core.mcp_manager:Failed to connect to STDIO MCP server office-word: '_asyncio.Future' object is not a mapping
+ERROR:plato.core.mcp_manager:Failed to connect to STDIO MCP server archy: '_asyncio.Future' object is not a mapping
+INFO:plato.server.api:MCP server connection results: {'serena': False, 'office-word': False, 'archy': False}
+INFO:plato.integrations.serena_mcp:Connecting to Serena MCP via SSE: http://localhost:8765/sse
+ERROR:plato.integrations.serena_mcp:Failed to connect via MCP: unhandled errors in a TaskGroup (1 sub-exception)
+INFO:plato.integrations.serena_mcp:Disconnected from Serena MCP
+WARNING:plato.server.api:Failed to connect to Serena MCP server
+INFO:plato.server.api:Plato server started successfully
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:plato.core.ai_router:Qwen local configured with base URL: http://192.168.1.28:8000/v1
+INFO:httpx:HTTP Request: POST http://192.168.1.28:8000/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+INFO:openai._base_client:Retrying request to /chat/completions in 0.435150 seconds
+INFO:httpx:HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:plato.integrations.serena_mcp:Connecting to Serena MCP via SSE: http://localhost:8765/sse
+ERROR:plato.integrations.serena_mcp:Failed to connect via MCP: unhandled errors in a TaskGroup (1 sub-exception)
+INFO:plato.integrations.serena_mcp:Disconnected from Serena MCP
+INFO:     127.0.0.1:50196 - "GET /health HTTP/1.1" 200 OK
+INFO:plato.core.context_manager:Created new context session: 8ab397a7-5ba3-4f99-81ab-66f488208d24
+INFO:plato.core.ai_router:Selected provider: AIProvider.QWEN_LOCAL (score: 47)
+INFO:httpx:HTTP Request: POST http://192.168.1.28:8000/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:plato.core.context_manager:Switched AI provider in session 8ab397a7-5ba3-4f99-81ab-66f488208d24: None -> qwen-local
+INFO:     127.0.0.1:54930 - "POST /chat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.1.28:8000/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:plato.integrations.serena_mcp:Connecting to Serena MCP via SSE: http://localhost:8765/sse
+ERROR:plato.integrations.serena_mcp:Failed to connect via MCP: unhandled errors in a TaskGroup (1 sub-exception)
+INFO:plato.integrations.serena_mcp:Disconnected from Serena MCP
+INFO:     127.0.0.1:48750 - "GET /health HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.1.28:8000/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+INFO:openai._base_client:Retrying request to /chat/completions in 0.448409 seconds
+INFO:httpx:HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+INFO:openai._base_client:Retrying request to /chat/completions in 0.786065 seconds
+INFO:httpx:HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:plato.integrations.serena_mcp:Connecting to Serena MCP via SSE: http://localhost:8765/sse
+ERROR:plato.integrations.serena_mcp:Failed to connect via MCP: unhandled errors in a TaskGroup (1 sub-exception)
+INFO:plato.integrations.serena_mcp:Disconnected from Serena MCP
+INFO:     127.0.0.1:57370 - "GET /health HTTP/1.1" 200 OK
+INFO:plato.core.context_manager:Created new context session: 22eb95d9-8a39-4383-953d-7bf3c03ed7fe
+INFO:plato.core.ai_router:Selected provider: AIProvider.QWEN_LOCAL (score: 47)
+INFO:httpx:HTTP Request: POST http://192.168.1.28:8000/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:plato.core.context_manager:Switched AI provider in session 22eb95d9-8a39-4383-953d-7bf3c03ed7fe: None -> qwen-local
+INFO:     127.0.0.1:45534 - "POST /chat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.1.28:8000/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:plato.core.context_manager:Switched AI provider in session 22eb95d9-8a39-4383-953d-7bf3c03ed7fe: qwen-local -> qwen-local
+INFO:     127.0.0.1:35820 - "POST /chat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.1.28:8000/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:plato.core.context_manager:Switched AI provider in session 22eb95d9-8a39-4383-953d-7bf3c03ed7fe: qwen-local -> qwen-local
+INFO:     127.0.0.1:49876 - "POST /chat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://192.168.1.28:8000/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:plato.core.context_manager:Switched AI provider in session 22eb95d9-8a39-4383-953d-7bf3c03ed7fe: qwen-local -> qwen-local
+INFO:     127.0.0.1:37186 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43922 - "GET /tools HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:plato.server.api:Shutting down Plato server...
+INFO:plato.integrations.serena_mcp:Disconnected from Serena MCP
+INFO:plato.server.api:Plato server shutdown complete
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1607923]
